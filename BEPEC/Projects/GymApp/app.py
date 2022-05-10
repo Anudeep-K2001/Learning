@@ -25,9 +25,8 @@ def cvt_features(df, ohe):
     new_df = pd.DataFrame(arr, columns=ohe.categories_[0])
     return pd.concat([df.reset_index(), new_df], axis=1).drop(["Gender","index"], axis=1)
 
-@st.cache
 def get_data():
-    data = pd.read_csv(r"./dataset/data.csv")
+    data = pd.read_csv("data.csv")
     features = data.iloc[:,:-1]
     target = data.iloc[:,-1]
     X_train, X_test, y_train, y_test = tts(features, target)
