@@ -15,6 +15,8 @@ import sklearn
 import streamlit as st
 import pickle
 
+import os
+path = os.path.dirname(os.path.realpath(__file__))
 
 from sklearn.model_selection import train_test_split as tts
 from sklearn.preprocessing import OneHotEncoder
@@ -26,7 +28,7 @@ def cvt_features(df, ohe):
     return pd.concat([df.reset_index(), new_df], axis=1).drop(["Gender","index"], axis=1)
 
 def get_data():
-    data = pd.read_csv("data.csv")
+    data = pd.read_csv(path + r"/dataset/data.csv")
     features = data.iloc[:,:-1]
     target = data.iloc[:,-1]
     X_train, X_test, y_train, y_test = tts(features, target)
@@ -34,7 +36,7 @@ def get_data():
 
 
 def load_model():
-    with open(r"./models/RandomForest", "rb") as f:
+    with open(path + r"/models/RandomForest", "rb") as f:
         rf = pickle.load(f)
     
     return rf
