@@ -34,7 +34,7 @@ def get_data():
     X_train, X_test, y_train, y_test = tts(features, target)
     return (X_train, X_test, y_train, y_test)
 
-
+@st.cache
 def load_model():
     with open(path + r"/models/RandomForest", "rb") as f:
         rf = pickle.load(f)
