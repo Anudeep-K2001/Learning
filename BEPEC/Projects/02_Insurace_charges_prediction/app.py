@@ -16,17 +16,17 @@ st.set_page_config(page_title="Insurance Charge Prediction", page_icon="📈")
 
 
 def get_models():
-    with open(path + r"./models/SVR", "rb") as f:
+    with open(path + r"/models/SVR", "rb") as f:
         svr = pickle.load(f)
 
-    with open(path + r"./models/RandomForest", "rb") as f:
+    with open(path + r"/models/RandomForest", "rb") as f:
         rf = pickle.load(f)
 
     return svr, rf
 
 @st.cache
 def get_data():
-    data = pd.read_csv(path + r"./datasets/data.csv")
+    data = pd.read_csv(path + r"/datasets/data.csv")
     return data
 
 @st.cache
