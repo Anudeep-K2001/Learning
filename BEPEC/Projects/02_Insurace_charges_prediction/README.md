@@ -9,4 +9,4 @@ Metric       : sklearn.metrics.r2_score, sklearn.metrics.mean_squared_error <br>
 Web app      : Streamlit <br>
 
 # Open in streamlit
-[![Streamlit App](https://share.streamlit.io/anudeep-k2001/learning/main/BEPEC/Projects/02_Insurace_charges_prediction/app.py)
+ [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/anudeep-k2001/learning/main/BEPEC/Projects/02_Insurace_charges_prediction/app.py)
