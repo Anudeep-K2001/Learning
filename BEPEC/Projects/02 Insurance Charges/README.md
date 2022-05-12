@@ -1,7 +1,5 @@
 # Insurance Charges Prediction
 
-# First Project In BEPEC
-
 Tells your Body Mass Index
 
 Data         : [Kaggle](https://www.kaggle.com/code/sudhirnl7/linear-regression-tutorial/data) <br>
