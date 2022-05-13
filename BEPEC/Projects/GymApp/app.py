@@ -27,6 +27,7 @@ def cvt_features(df, ohe):
     new_df = pd.DataFrame(arr, columns=ohe.categories_[0])
     return pd.concat([df.reset_index(), new_df], axis=1).drop(["Gender","index"], axis=1)
 
+@st.cache
 def get_data():
     data = pd.read_csv(path + r"/dataset/data.csv")
     features = data.iloc[:,:-1]
@@ -34,7 +35,6 @@ def get_data():
     X_train, X_test, y_train, y_test = tts(features, target)
     return (X_train, X_test, y_train, y_test)
 
-@st.cache
 def load_model():
     with open(path + r"/models/RandomForest", "rb") as f:
         rf = pickle.load(f)
